@@ -43,13 +43,14 @@ module.exports.authenticate = function(req,res)
 
 							 
 						}else{
-							
-								var sql = "INSERT INTO users (email) VALUES ('"+req.body.user+"') ";
+								var insertdata = {email:req.body.user};
+								//var sql = "INSERT INTO users set ('"+req.body.user+"') ";
 								console.log(sql)
-								con.query(sql, function(err, result) {
+								con.query('INSERT INTO users SET ?',insertdata, function(err, result) {
 
 									if(err){
-										data.message = "your username already register with  us"
+
+										data.message = "somthing went Wrong sorry"
 										res.send(JSON.stringify(data));
 									}else{
 										data.message = "your account created  click on subscribe to get into your account"
