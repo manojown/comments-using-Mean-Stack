@@ -15,19 +15,14 @@
     </br>
   </div>
 
-   <div class="panel-body " ng-if="mycomment">
-      <div class="card card-block jumbotron"  >
-        <h6 class="card-title">{{$index + 1}} {{logeduser}} </h6>
-    		<p class="card-text">{{mycomment}}</p>
-      </div>
-   </div>
+  
 
 
 
 
   
     <div ng-repeat="verify in verify" style="margin-top: -20px;">
-        <h4 class="card-title"><font color="#808080">{{verify.user}} </font></h4>
+        <h4 class="card-title"><font color="#808080">{{$index + 1}} . {{verify.user}} </font></h4>
   		  <div class="float-xs-right">
       			 <a href=""> <span class="glyphicon glyphicon-thumbs-up  up" ng-model="verify.cid" ng-click="upvotectrl(verify.cid)"> </a> <font size="3" color="#808080">{{verify.upvote}} Upvote</font></span></br>
       			 <a href=""> <span class="glyphicon glyphicon-thumbs-down down" ng-model="verify.cid" ng-click="downvotectrl(verify.cid)"></a><font size="3" color="#808080"> {{verify.downvote}} Downvote </font></span>
