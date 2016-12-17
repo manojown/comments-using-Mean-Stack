@@ -1,0 +1,56 @@
+<hr>
+
+
+<div class="card card-block  jumbotron shadow" style="margin-left: 330px; margin-right:330px" ng-if="!message">
+  <div class="float-xs-right">
+  <span class="glyphicon glyphicon-user" ng-if="logeduser"> Hi - {{logeduser}}</span>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleTextarea">Comment Box</label>
+    <textarea class="form-control jumbotron" id="exampleTextarea" ng-model="mycomment" placeholder="Enter your Comment..." required="neccessary "></textarea></br>
+  
+     <button type="submit" class="btn btn-primary float-xs-right color " ng-click="comment(logeduser,mycomment)">Comment</button></br>
+   
+    </br>
+  </div>
+
+   <div class="panel-body " ng-if="mycomment">
+      <div class="card card-block jumbotron"  >
+        <h6 class="card-title">{{$index + 1}} {{logeduser}} </h6>
+    		<p class="card-text">{{mycomment}}</p>
+      </div>
+   </div>
+
+
+
+
+  
+    <div ng-repeat="verify in verify" style="margin-top: -20px;">
+        <h4 class="card-title"><font color="#808080">{{verify.user}} </font></h4>
+  		  <div class="float-xs-right">
+      			 <a href=""> <span class="glyphicon glyphicon-thumbs-up  up" ng-model="verify.cid" ng-click="upvotectrl(verify.cid)"> </a> <font size="3" color="#808080">{{verify.upvote}} Upvote</font></span></br>
+      			 <a href=""> <span class="glyphicon glyphicon-thumbs-down down" ng-model="verify.cid" ng-click="downvotectrl(verify.cid)"></a><font size="3" color="#808080"> {{verify.downvote}} Downvote </font></span>
+  		 </div>
+        <p class="card-text"><font size="3">{{verify.comment}}</font></p></br>
+        <hr>
+        </br>
+    </div>
+
+<style>
+   .down {
+       color: #F00;    
+   }
+    .up {
+        color:  	#008000;    
+   }
+   .jumbotron{
+    background-color: #F5F5F5;
+   }
+  
+.shadow{
+    box-shadow: 5px 5px 10px 5px grey;
+
+}
+
+</style>
