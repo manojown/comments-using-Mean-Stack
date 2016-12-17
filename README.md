@@ -17,7 +17,7 @@ Here you can comment and vote other poeple on those comments
       2. if user name is already there in database entry then get into or username 
              is not there then system created for you 
       3.you can comment your own comment
-      4. you can vote other person comment <a>upvote </a> <a>downvote </a>
+      4. you can vote other person comment upvote or downvote 
       
   #tables in mysql 
   
@@ -32,5 +32,5 @@ Here you can comment and vote other poeple on those comments
       2. votes -                     fields|            (cid + email both combine primary key
                                            |_cid
                                            |_email
-                                           |_flag   <a>upvote - 0  downvote - 1 </a>
+                                           |_flag   upvote - 0  downvote - 1 
                                            
