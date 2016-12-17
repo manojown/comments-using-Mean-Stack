@@ -41,11 +41,11 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
                 $http.post("/insert",{user:$scope.loguser,comment:  $scope.com}).then(function(data)
                 {
                   
-                  if(data='success'){
+                 
 
                       $scope.subsribe(loguser);
                          $rootScope.mycomment = null;
-                  }
+                 
                   
               });
           }

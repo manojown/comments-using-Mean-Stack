@@ -12,7 +12,7 @@ module.exports.insert = function(req,res)
 		 con.query('INSERT INTO comment_log SET ?',datainsert, function(err, result) {
 
 			if(err){
-				var data = "success"
+				var data = "fail"
 				res.send(JSON.stringify(data));
 			}else{
 				res.send(JSON.stringify(data));
