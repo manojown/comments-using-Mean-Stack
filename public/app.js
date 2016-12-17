@@ -1,4 +1,4 @@
-
+// i use rootscope  instead of set cookies or session to remeber user for app  each mode or each module
 var app = angular.module("myApp", ['ui.router']); 
 
 app.controller("myCtrl", function($scope,$http,$rootScope) {
@@ -7,7 +7,9 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
     $scope.subsribe = function(user){
     
       $scope.user1 = user
-      
+      console.log($scope.mycomment);
+      $scope.mycomment = null;
+
       // validation for subscribe field
       if(!user){
             alert("enter user name than submit") ;
@@ -31,8 +33,8 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
      
       $scope.loguser = loguser;
        $scope.com = com;
-       console.log($scope.mycomment);
-         $rootScope.mycomment = null;
+       //console.log(mycomment);
+         $scope.mycomment = null;
       //validate comment field if it is null than give alert and not than go furthure
        if(! $scope.com){
 
@@ -46,7 +48,7 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
                  
 
                       $scope.subsribe(loguser);
-                         $rootScope.mycomment = null;
+                       
                  
                   
               });
