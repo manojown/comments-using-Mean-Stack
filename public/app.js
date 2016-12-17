@@ -17,8 +17,8 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
             {
             
             $rootScope.message = data.data.message; // for first time create account
-            $rootScope.verify = data.data.comments;
-            $rootScope.logeduser =  data.data.user
+            $rootScope.verify = data.data.comments; //all details  of comments
+            $rootScope.logeduser =  data.data.user //current loged in user
            
           });
 
@@ -30,6 +30,7 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
      
       $scope.loguser = loguser;
        $scope.com = com;
+
       //validate comment field if it is null than give alert and not than go furthure
        if(! $scope.com){
 
@@ -43,6 +44,7 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
                   if(data='success'){
 
                       $scope.subsribe(loguser);
+                         $rootScope.mycomment = null;
                   }
                   
               });
