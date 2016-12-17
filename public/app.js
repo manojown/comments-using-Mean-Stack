@@ -1,12 +1,13 @@
 
-var app = angular.module("myApp", ['ui.router']);
+var app = angular.module("myApp", ['ui.router']); 
 
 app.controller("myCtrl", function($scope,$http,$rootScope) {
   // subscribe at starting when user click on subscribe and validate that fied  if null
+
     $scope.subsribe = function(user){
     
       $scope.user1 = user
-
+      
       // validation for subscribe field
       if(!user){
             alert("enter user name than submit") ;
@@ -30,7 +31,8 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
      
       $scope.loguser = loguser;
        $scope.com = com;
-
+       console.log($scope.mycomment);
+         $rootScope.mycomment = null;
       //validate comment field if it is null than give alert and not than go furthure
        if(! $scope.com){
 
@@ -49,23 +51,25 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
                   
               });
           }
-    }
+    } 
+
+    //for upvote task
      $scope.upvotectrl = function(cid){
      
       $scope.cid = cid;
-       
+      
       $http.post("/upvote",{cid:$scope.cid,user:  $rootScope.logeduser,flag:0}).then(function(data)
       {
         
         
 
-            $scope.subsribe( $rootScope.logeduser);
+            $scope.subsribe( $rootScope.logeduser); //to relode page after click on upvote
        
         
     });
 
     }
-
+    //for downvote task
     $scope.downvotectrl = function(cid){
      
       $scope.cid = cid;
@@ -75,14 +79,14 @@ app.controller("myCtrl", function($scope,$http,$rootScope) {
         
         
 
-            $scope.subsribe( $rootScope.logeduser);
+            $scope.subsribe( $rootScope.logeduser); //to relode page after click on downvote
        
         
     });
 
     }
 });
-
+// state file to manage state of url
 app.config(function($stateProvider, $urlRouterProvider)
 {
 
@@ -90,12 +94,8 @@ app.config(function($stateProvider, $urlRouterProvider)
 
     $stateProvider
     
-        .state('login', {
-          url: '/login',
-     
-          templateUrl: 'views/login.html',
-          controller: 'myCtrl'
-        }).state('home', {
+       
+        .state('home', {
           url: '/home',
  
           templateUrl: 'views/home.html',

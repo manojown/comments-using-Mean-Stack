@@ -15,13 +15,12 @@ var session;
 
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended:true}));
+
 var session;
 app.use(express.static('public'));
 
 app.get('/',function(req,res){
-	session = req.session
-	console.log(session.id +" 888888asdas");
+	
 	if(session.id){
 			res.redirect('/login')
 	}else{
@@ -40,10 +39,10 @@ app.get('/*',function(req,res){
 		res.redirect('/');
 	}
 });
-app.post('/login',authenticate.authenticate);
-app.post('/insert',insert.insert);
-app.post('/upvote',upvote.upvote);
-app.post('/downvote',downvote.downvote);
+app.post('/login',authenticate.authenticate); // startitg authenticate user if user exis than load comment or not than create new one and oad comment
+app.post('/insert',insert.insert); // insert new comments
+app.post('/upvote',upvote.upvote); //upvote 
+app.post('/downvote',downvote.downvote); //down vote
 app.listen(process.env.PORT || 3000,function(err)
 {
 	if(err)
