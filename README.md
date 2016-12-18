@@ -37,5 +37,5 @@ Here you can comment and vote other poeple on those comments
 # IF heroku server issue than just download this repository and just run app on your system
     step 1 - go to project folder via cmd 
     step 2  - write command  <node index.js>
-    step 4  - go to browser enter  local  http://localhost:3000/
+    step 3  - go to browser enter  local  http://localhost:3000/
                                            
