@@ -22,7 +22,7 @@ Here you can comment and vote other poeple on those comments
   #tables in mysql 
   
         1. users -                    fields|
-                                            |_email
+                                            |_email    (email is primary)
        
        2. comment_log -              fields|           (cid is primary key and email is foriegn key )
                                            |_cid
@@ -33,4 +33,9 @@ Here you can comment and vote other poeple on those comments
                                            |_cid
                                            |_email
                                            |_flag   upvote - 0  downvote - 1 
+                                           
+# IF heroku server issue than just download this repository and just run app on your system
+    step 1 - go to project folder via cmd 
+    step 2  - write command  <node index.js>
+    step 4  - go to browser enter  local  http://localhost:3000/
                                            
