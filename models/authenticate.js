@@ -16,6 +16,7 @@ module.exports.authenticate = function(req,res)
 		var sql = "select * from users where email ='"+user+"'";
 		con.query(sql, function(error,rows)
 					{
+						//console.log(error);
 						if(!error && rows.length>0)
 						{	
 								session= req.session;
