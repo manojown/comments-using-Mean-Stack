@@ -1,6 +1,6 @@
 # comments Portal
 Here you can comment and vote other poeple on those comments
-# demo - <a>https://commentportal1.herokuapp.com/</a>
+# demo - <a>http://comment123.herokuapp.com//</a>
 
 # what use
     1. Node.js 
